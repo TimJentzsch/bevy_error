@@ -11,7 +11,7 @@ impl<C: ErrorCode> BevyError<C> {
     }
 
     /// Abort program execution and emit the error as panic message.
-    pub fn panic_with_error(&self) {
+    pub fn panic_with_error(&self) -> ! {
         panic!("{}", self.create_message("error"));
     }
 
